@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    overflow: hidden;
+    font-family: 'Poppins';
+    user-select: none;
+    background: rgba(34, 34, 34, 0);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #272727;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(31, 31, 31);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(31, 31, 31);
+  }
+  
+.container{
+    background: rgb(48, 48, 48);
+    position: relative;
+    margin: auto;
+    top: 10vh;
+    width: 60vw;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    border: 25px solid black;
+    height: 73vh;
+    transform: translateY(120%) scale(0.5);
+    transition: all .8s;
+}
+.fade{
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.topBar{
+    background: rgba(255, 0, 0, 0);
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    display: flex;
+}
+.accountBalance{
+    text-align: center;
+    width: 10rem;
+    color: white;
+    background: rgba(255, 0, 0, 0);
+    margin: 0.3rem;
+    padding: 0.2rem;
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+}
+.rightSide{
+    display: flex;
+    width: fit-content;
+    border-radius: 5px;
+    height: 3rem;
+    margin: 0rem 0rem;
+    padding: 0.2rem;
+    color: white;
+    margin-left: auto;
+    margin-right:  0rem;
+    text-align: center;
+}
+.rightSide div{
+    cursor: pointer;
+    position: relative;
+    margin:auto 0.4rem;
+    padding: 0.4rem 0.8rem;
+    height: fit-content;
+    border-radius: 0px;
+    border-radius: 5px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    transition: all 0.3s;
+}
+.rightSide div:hover{
+    background: rgb(71, 71, 71);
+}
+.Users{
+    display: none;
+    background: rgba(255, 0, 0, 0);
+    width: 90%;
+    height: 80%;
+    overflow: auto;
+    margin: auto;
+    top: 12%;
+    border-radius: 5px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    position: relative;
+}
+.Table{
+    text-align: center;
+    width: 95%;
+    height: fit-content;
+    background: rgba(41, 41, 41, 0.027);
+    border-radius: 10px;
+    margin: 0.4rem auto;
+    display: block;
+    color: white;
+    border-spacing: 0px;
+}
+tr{
+    width: 100%;
+    margin: auto;
+    background: rgba(41, 41, 41, 0.76);
+    height: 5rem;
+    border-bottom:2px solid rgb(48, 48, 48);
+
+}
+th{
+
+    width: 15.8rem;
+    border-bottom:10px solid rgb(48, 48, 48);
+}
+td{
+    word-wrap: break-word;
+    padding: 5px;
+    width: 15.8rem;
+    border-bottom:10px solid rgb(48, 48, 48);
+}
+.UserMenu{
+    background: rgba(94, 94, 94, 0.582);
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+    line-height: 35px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.UserMenu:hover{
+    background: rgba(53, 53, 53, 0.582);
+}
+.ucss{
+    width: 170px;
+    background: RED;
+    margin: auto ;
+    text-align: center;
+    position: relative;
+}
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.ubtn{
+    cursor: pointer;
+    width: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    padding: 10px 17px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+    background: rgba(94, 94, 94, 0.582);
+}
+.ubtn:hover{
+
+    background: rgba(46, 46, 46, 0.582);
+}
+.inputVal{
+    display: none;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background: rgb(48, 48, 48);
+    width: 450px;
+    height: 140px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    border-radius: 5px;
+    border: 2px solid #1a1919;
+    transform: translateX(-50%);
+}
+.ValOf{
+    background: #474646;
+    color: white;
+    width: 350px;
+    height: 25px;
+    position: relative;
+    top: 10%;
+    padding: 5px;
+    border: none;
+    font-size: 1.12rem;
+    outline: none;
+}
+.ValOf:focus{
+    border: none;
+    outline: none;
+}
+.SubInVal{
+    position: relative;
+    top: 15%;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background: #272727;
+    padding: 6px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.SubInVal:hover{
+    background: #474646;
+}
+
+.SubOutVal{
+    position: relative;
+    top: 15%;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background: #272727;
+    padding: 6px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.SubOutVal:hover{
+    background: #474646;
+}
+
+.Gej{
+    position: relative;
+    top: 15%;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background: #272727;
+    padding: 6px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.Gej:hover{
+    background: #474646;
+}
+
+.InputButtons{
+    top: 15%;
+    position: relative;
+    display: flex;
+}
+.CloseInput{
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+.CloseInputs{
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+.userMenagment{
+    color: white;
+    display: flex;
+    background: rgba(255, 0, 0, 0);
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    margin: auto;
+    top: 12%;
+    border-radius: 5px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    position: relative;
+}
+.UserInfo{
+    border-radius: 0px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    position: relative;
+    width: 35%;
+    height: 34rem;
+    margin: 2rem;
+    left: 3rem;
+
+}
+.uscc{
+    position: relative;
+    top: 1rem;
+    width: 90%;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 10px;
+    border-radius: 0px;
+    margin: .3rem auto;
+    background: #474646;
+    text-align: center;
+}
+.UserAwans{
+    width: 90%;
+    position: relative;
+    top: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 10px;
+    border-radius: 0px;
+    margin: .3rem auto;
+    background: #161516;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+}
+.UserAwans:hover{
+    background: #272727;
+}
+.UserDegrad{
+    position: relative;
+    top: 1rem;
+    width: 90%;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 10px;
+    border-radius: 0px;
+    margin: .3rem auto;
+    background: #161516;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+.UserDegrad:hover{
+    background: #272727;
+}
+.UserAbil{
+    text-align: center;
+    position: relative;
+    top: 3.3rem;
+    width: 35%;
+    height: 29.2rem;
+    background: #27272700;
+    left:  7rem;
+    border: 2px solid #000;
+    left: 3rem;
+    padding: 10px;
+    overflow: hidden;
+}
+.UserAbScroll{
+    width: 100%;
+    height: 94%;
+    background: rgba(255, 0, 0, 0);
+    overflow: auto;
+}
+.UserAb{
+    
+    position: relative;
+    top: 0rem;
+    width: 90%;
+    height: 2rem;
+    display: flex;
+    line-height: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    margin: .2rem auto;
+    background: #47464600;
+    text-align: center;
+    left: -1rem;
+}
+.Ab{
+    text-align: left;
+    padding: 0 10px;
+    width: 85%;
+    background: #474646;
+}
+.AbInput{
+    position: relative;
+    left: 1rem;
+    cursor: pointer;
+    width:1.6rem;
+}
+.CloseMenagment{
+    cursor: pointer;
+    background: #161516;
+    height: fit-content;
+    padding: 8px 35px;
+    right: 8rem;
+    top: 0rem;
+    position: absolute;
+}
+#mmm{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-60%);
+}
+.UsersAwansLab{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background: rgb(48, 48, 48);
+    width: 350px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    border-radius: 5px;
+    border: 2px solid #1a1919;
+    transform: translateX(-50%);
+    z-index: 12320;
+    overflow: hidden;
+}
+.RankChose{
+    background: rgba(255, 0, 0, 0);
+    width: 100%;
+    height: 90%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 0.5rem;
+    
+}
+
+.RankLab{
+    display: block;
+    width: 100%;
+    background: #47464600;
+    
+}
+.RankN{
+    cursor: pointer;
+    transition: all 0.4s;
+    background: #474646;
+    padding: 5px;
+    width: 99%;
+    margin: 0.2rem 0;
+}
+.RankN:hover{
+    background: #464141;
+}
+.SelectRank{
+    width: 1.5rem;
+    position: relative;
+    left: 0.4rem;
+    cursor: pointer;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FRP bossMenu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://kit.fontawesome.com/8e51693bb9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="fade"></div>
+        <div class="topBar">
+            <div class="accountBalance">
+                <p id="acb">Stan Konta: 0$</p>
+            </div>
+            <div class="rightSide">
+                
+                <div class="hire">Zatrudnij</div>
+                <div class="Dhire">Zwolnij</div>
+                <div class="Cashin">Wypłać</div>
+                <div class="Cashout">Wpłać</div>
+                <div class="Close">Zamknij</div>
+            </div>
+        </div>
+        <div class="Users">
+            <table class="Table">
+            <thead>
+                <tr>
+                <th style="  border-top-left-radius: 5px;border-bottom-left-radius:5px;">Imię</th>
+                <th>Nazwisko</th>
+                <th>Ranga</th>
+                <th style="border-top-right-radius: 5px;border-bottom-right-radius:5px;">Menu Pracownika</th>
+                </tr>
+            </thead>
+                <tbody id="TableUser">
+                </tbody>
+            </table>
+        </div>
+        <div class="userMenagment">
+            <h2 id="mmm">Zarządzanie Pracownikiem</h2>
+            <div class="UserInfo">
+                <div class="uscc UserName">Imie: <span id="NameToInsert">Jacob</span></div>
+                <div class="uscc UserSname">Nazwisko: <span id="SnameToInsert">Smith</span></div>
+                <div class="uscc UserRank">Ranga: <span id="RankToInsert">Kadet</span></div>
+                <div class="uscc Userbadge">Odznaka: <span id="BadageToInsert">69</span></div>
+                <!-- <div class="uscc UserTime">Czas Pracy: <span id="TimeToInsert">10</span></div> -->
+                <div class="uscc UserSsn">Ssn: <span id="SsnToInsert">1021412</span></div>
+                <div class="UserAwans">Zmień Range</div>
+            </div>
+           
+            <div class="UserAbil">
+                <h3>Szkolenia</h3>
+                <div class="UserAbScroll">
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                    <div class="UserAb">
+                        <div class="Ab">SWAT</div>
+                        <input type="checkbox" name="" id="" class="AbInput">
+                    </div>
+                </div>
+            </div>
+            <div class="CloseMenagment">
+                Cofnij
+            </div>
+        </div>
+    </div>
+    <div class="UsersAwansLab">
+        <h3>Wybierz Range</h3>
+        <div class="closeRank">
+            <div class="CloseInputs"><i class="fa-solid fa-x"></i></div>
+        </div>
+        <div class="RankChose">
+            <div class="RankLab">
+
+            </div>
+        </div>
+    </div>
+    <div class="inputVal inputValA" data-ValData="none">
+        <div class="CloseInput"><i class="fa-solid fa-x"></i></div>
+        <div class="TitleInput"><h3>Wpisz Kwote do wpłaty</h3></div>
+        <input type="number" class="ValOf valToAdd">
+        <div class="InputButtons">
+            <div class="SubInVal">Zatwierdź</div>
+        </div>
+    </div>
+    <div class="inputVal inputValR" data-ValData="none">
+        <div class="CloseInput"><i class="fa-solid fa-x"></i></div>
+        <div class="TitleInput"><h3>Wpisz Kwote do wypłaty</h3></div>
+        <input type="number" class="ValOf valToRemove">
+        <div class="InputButtons">
+            <div class="SubOutVal">Zatwierdź</div>
+        </div>
+    </div>
+    <div class="inputVal inputValH" data-ValData="none">
+        <div class="CloseInput"><i class="fa-solid fa-x"></i></div>
+        <div class="TitleInput"><h3>Wpisz id do zatrudnienia</h3></div>
+        <input type="number" class="ValOf valToHire">
+        <div class="InputButtons">
+            <div class="Gej SubHireVal">Zatrudnij</div>
+        </div>
+    </div>
+    <div class="inputVal inputValDH" data-ValData="none">
+        <div class="CloseInput"><i class="fa-solid fa-x"></i></div>
+        <div class="TitleInput"><h3>Wpisz id do zwolnienia</h3></div>
+        <input type="number" class="ValOf valToDHire">
+        <div class="InputButtons">
+            <div class="Gej SubDHireVal">Zwolnij</div>
+        </div>
+    </div>
+</body>
+    <script src='main.js'></script>
+</html>
